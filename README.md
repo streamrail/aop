@@ -2,7 +2,7 @@
 AOP process GO source files looking for specific function decorated comments which directs it to wrap such functions with calls to OnEntry and OnReturn
 
 
-##example
+##Example
 
 Suppose that src.go contains the following Add function
 
@@ -46,7 +46,7 @@ Parameters: holds the parameters which the callee has been called with.
 You may alter both Parameters and ReturnValue, please note setting ReturnValue to a none nil value will cause the callee (in this example Add) to return that value immediately without executing.
 
 
-Calling
+##Usage
 ```cmd
 	aop src.go output.go
 ```
