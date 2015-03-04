@@ -38,10 +38,12 @@ Where functionCall is a struct:
 ```
 
 functionName: holds the name of the function which causes this decoration to run, in our case Add.
-ReturnValue: is nil for OnEntry 'events', within OnReturn 'event' it will hold the return value of the caller
-Parameters: holds the parameters of the caller
 
-You may alter both Parameters and ReturnValue, please note, setting ReturnValue to a none nil value will cause the caller (in this example Add) to return that value immediately without executing.
+ReturnValue: is nil for OnEntry 'event', within OnReturn 'event' it will hold the return value of the callee
+
+Parameters: holds the parameters which the callee has been called with.
+
+You may alter both Parameters and ReturnValue, please note setting ReturnValue to a none nil value will cause the callee (in this example Add) to return that value immediately without executing.
 
 
 Calling
