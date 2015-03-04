@@ -22,8 +22,7 @@ const (
 	}
 
 	ENTRY(ctx)
-	if ctx.ReturnValue != nil { 
-		LEAVE(ctx)
+	if ctx.ReturnValue != nil {
 		return ctx.ReturnValue.(RET_TYPE)
 	}
 
@@ -335,9 +334,9 @@ func WrapFunc(funcName string, fd *FuncDesc) string {
 	}
 
 	if len(returns) > 0 {
-		template = strings.Replace(template, "LEAVE(ctx)", returns, -1)
+		template = strings.Replace(template, "LEAVE(ctx)", returns, 1)
 	} else {
-		template = strings.Replace(template, "LEAVE(ctx)", "", -1)
+		template = strings.Replace(template, "LEAVE(ctx)", "", 1)
 		template = strings.Replace(template, "ctx.ReturnValue = ORIGINAL(PARAMS)", "return ORIGINAL(PARAMS)", 1)
 		template = strings.Replace(template, "	return ctx.ReturnValue.(RET_TYPE)", "", 1)
 	}
