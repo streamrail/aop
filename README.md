@@ -48,7 +48,7 @@ You may alter both Parameters and ReturnValue, please note setting ReturnValue t
 
 ##Usage
 ```cmd
-	aop src.go output.go
+	aop -src src.go -out output.go
 ```
 
 Will generate a new output.go file:
